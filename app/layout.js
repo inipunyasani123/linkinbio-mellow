@@ -3,10 +3,10 @@ import "./globals.css";
 
 const quicksand = Quicksand({ subsets: ["latin"], variable: "--font-quicksand", weight: ["500", "600", "700"] });
 
-const __jsonld = {"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"Mella","jobTitle":"Ilustrator & Sticker Artist","url":"https://linkinbio-mellow.vercel.app","inLanguage":"id"}};
+const __jsonld = {"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"Mella","jobTitle":"Ilustrator & Sticker Artist","url":"https://linkinbio-mellow.pintuweb.id","inLanguage":"id"}};
 
 export const metadata = {
-  metadataBase: new URL("https://linkinbio-mellow.vercel.app"),
+  metadataBase: new URL("https://linkinbio-mellow.pintuweb.id"),
   title: { default: "Mella — Ilustrator & Sticker Artist", template: "%s — Mella" },
   description: "Tautan Mella, ilustrator dan sticker artist di Malang: toko lima pack sticker vinyl, jadwal bazar, komisi ilustrasi dengan estimasi harga, dan kerja sama brand.",
   applicationName: "Mella",
@@ -14,11 +14,11 @@ export const metadata = {
   authors: [{ name: "Mella" }],
   creator: "Mella",
   publisher: "Mella",
-  alternates: { canonical: "https://linkinbio-mellow.vercel.app" },
+  alternates: { canonical: "https://linkinbio-mellow.pintuweb.id" },
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://linkinbio-mellow.vercel.app",
+    url: "https://linkinbio-mellow.pintuweb.id",
     siteName: "Mella",
     title: "Mella — Ilustrator & Sticker Artist",
     description: "Tautan Mella, ilustrator dan sticker artist di Malang: toko lima pack sticker vinyl, jadwal bazar, komisi ilustrasi dengan estimasi harga, dan kerja sama brand.",

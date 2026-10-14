@@ -2,7 +2,7 @@
 
 Tautan Mella, ilustrator dan sticker artist di Malang: toko lima pack sticker vinyl, jadwal bazar, komisi ilustrasi dengan estimasi harga, dan kerja sama brand.
 
-**Demo live:** https://linkinbio-mellow.vercel.app
+**Demo live:** https://linkinbio-mellow.pintuweb.id
 
 ![Tangkapan layar Mella](public/og.jpg)
 
