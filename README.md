@@ -1,6 +1,6 @@
 # Mella — Ilustrator & Sticker Artist
 
-Tautan Mella, ilustrator dan sticker artist di Malang: toko lima pack sticker vinyl, jadwal bazar, komisi ilustrasi dengan estimasi harga, dan kerja sama brand.
+Tautan Mella, ilustrator & sticker artist di Malang: lima pack sticker vinyl, jadwal bazar, komisi ilustrasi dengan estimasi harga, dan kerja sama brand.
 
 **Demo live:** https://linkinbio-mellow.pintuweb.id
 

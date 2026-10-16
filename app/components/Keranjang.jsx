@@ -12,7 +12,7 @@ export default function Keranjang() {
   const isi = PACK.filter((p) => jml[p.id]);
   const subtotal = isi.reduce((s, p) => s + p.harga * jml[p.id], 0);
   const ongkir = subtotal && subtotal < GRATIS_ONGKIR ? ONGKIR : 0;
-  const tombol = 'grid h-9 w-9 place-items-center rounded-full bg-white text-lg font-bold text-[#5b4a63] shadow-sm disabled:opacity-40';
+  const tombol = 'grid h-11 w-11 place-items-center rounded-full bg-white text-xl font-bold text-[#5b4a63] shadow-sm disabled:opacity-40';
 
   return (
     <>
@@ -37,7 +37,7 @@ export default function Keranjang() {
                 </div>
               </div>
             ) : (
-              <p className="mt-4 text-xs font-bold text-[#6e5a75]">Habis — dicetak ulang November</p>
+              <p className="mt-4 text-xs font-bold text-[#6e5a75]">Habis — dicetak ulang bulan depan</p>
             )}
           </li>
         ))}
@@ -49,7 +49,7 @@ export default function Keranjang() {
           <div role="status" className="mt-3">
             <p className="font-bold text-[#5b4a63]">Pesanan tercatat — terima kasih! 💌</p>
             <p className="mt-1 text-sm font-medium text-[#6e5a75]">Ini purwarupa desain: tidak ada pembayaran atau pengiriman sungguhan.</p>
-            <button type="button" onClick={() => { setSelesai(false); setJml({}); }} className="mt-4 rounded-full bg-pink-100 px-4 py-2 text-sm font-bold text-[#5b4a63]">Belanja lagi</button>
+            <button type="button" onClick={() => { setSelesai(false); setJml({}); }} className="mt-4 min-h-11 rounded-full bg-pink-100 px-5 py-2 text-sm font-bold text-[#5b4a63]">Belanja lagi</button>
           </div>
         ) : isi.length ? (
           <>

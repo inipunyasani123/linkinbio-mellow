@@ -2,6 +2,15 @@ import Link from 'next/link';
 import { ArrowUpRight, Heart } from 'lucide-react';
 import { LINKS, PROFIL } from '@/lib/mella';
 
+const STIKER = [
+  { e: '🌷', c: 'h-24 w-24 bg-pink-100 text-5xl', s: { top: '12%', left: '9%', rotate: '-10deg' } },
+  { e: '☁️', c: 'h-20 w-28 bg-sky-100 text-5xl', s: { top: '20%', right: '9%', rotate: '7deg' } },
+  { e: '🍓', c: 'h-20 w-20 bg-white text-4xl', s: { top: '50%', left: '15%', rotate: '9deg' } },
+  { e: '⭐', c: 'h-16 w-16 bg-amber-100 text-3xl', s: { bottom: '16%', left: '8%', rotate: '-6deg' } },
+  { e: '🐈', c: 'h-24 w-24 bg-violet-100 text-5xl', s: { bottom: '14%', right: '11%', rotate: '-8deg' } },
+  { e: '✏️', c: 'h-16 w-16 bg-emerald-100 text-3xl', s: { top: '52%', right: '17%', rotate: '12deg' } },
+];
+
 export default function Home() {
   return (
     <main className="relative flex min-h-screen items-center justify-center px-4 py-14">
@@ -10,8 +19,17 @@ export default function Home() {
       <div className="blob h-64 w-64 bg-sky-200" style={{ bottom: '-3rem', right: '-3rem', animation: 'drift 18s ease-in-out infinite reverse' }} aria-hidden="true" />
       <div className="blob h-52 w-52 bg-amber-100" style={{ top: '30%', right: '-2rem', animation: 'drift 16s ease-in-out infinite' }} aria-hidden="true" />
 
+      {/* Papan stiker: hiasan di tepi layar lebar */}
+      <div className="pointer-events-none hidden lg:block" aria-hidden="true">
+        {STIKER.map((t) => (
+          <span key={t.e} className={`sticker absolute grid place-items-center rounded-[1.6rem] ${t.c}`} style={t.s}>{t.e}</span>
+        ))}
+      </div>
+
       <div className="w-full max-w-md text-center">
-        <div className="rise sticker bob mx-auto grid h-28 w-28 place-items-center rounded-[2rem] bg-white text-6xl" aria-hidden="true">🐰</div>
+        <div className="rise" aria-hidden="true">
+          <div className="sticker bob mx-auto grid h-28 w-28 place-items-center rounded-[2rem] bg-white text-6xl">🐰</div>
+        </div>
 
         <div className="rise mt-6" style={{ animationDelay: '0.08s' }}>
           <span className="sticker inline-block -rotate-2 rounded-full bg-white px-4 py-1 text-xs font-bold text-pink-700">✿ ilustrator &amp; sticker artist</span>

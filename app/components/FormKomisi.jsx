@@ -1,17 +1,19 @@
 'use client';
 
 import { useState } from 'react';
-import { JENIS, SLOT, TAMBAHAN, rp } from '@/lib/mella';
+import { JENIS, TAMBAHAN, rp, slotBulan } from '@/lib/mella';
+import useHariIni from './useHariIni';
 
-export default function FormKomisi() {
+export default function FormKomisi({ hari: awal }) {
+  const hari = useHariIni(awal);
   const [jenis, setJenis] = useState('setengah');
   const [latar, setLatar] = useState(false);
   const [karakter, setKarakter] = useState(1);
   const [selesai, setSelesai] = useState(false);
   const j = JENIS.find((x) => x.id === jenis);
   const total = j ? j.harga + (latar ? TAMBAHAN.latar : 0) + (karakter - 1) * TAMBAHAN.karakter : 0;
-  const bulan = SLOT.filter(([, sisa]) => sisa).map(([b]) => b);
-  const input = 'w-full rounded-2xl border-2 border-white bg-white/70 px-4 py-3 font-medium text-[#5b4a63] focus:border-pink-300 focus:outline-none';
+  const bulan = slotBulan(hari).filter((s) => s.sisa).map((s) => s.label);
+  const input = 'w-full rounded-2xl border-2 border-[#a07592] bg-white/80 px-4 py-3 font-medium text-[#5b4a63] focus:border-pink-400';
 
   return (
     <section aria-labelledby="pesan-h" className="sticker mt-10 rounded-[1.8rem] bg-amber-100 p-6">
@@ -20,7 +22,7 @@ export default function FormKomisi() {
         <div role="status" className="mt-4">
           <p className="font-bold text-[#5b4a63]">Tercatat! Mella akan membalas dalam 3 hari 🌷</p>
           <p className="mt-1 text-sm font-medium text-[#6e5a75]">Ini purwarupa desain: tidak ada pesan yang benar-benar dikirim.</p>
-          <button type="button" onClick={() => setSelesai(false)} className="mt-4 rounded-full bg-white px-4 py-2 text-sm font-bold text-[#5b4a63]">Pesan lagi</button>
+          <button type="button" onClick={() => setSelesai(false)} className="mt-4 min-h-11 rounded-full bg-white px-5 py-2 text-sm font-bold text-[#5b4a63]">Pesan lagi</button>
         </div>
       ) : (
         <form onSubmit={(e) => { e.preventDefault(); setSelesai(true); }} className="mt-5 space-y-5">
@@ -28,7 +30,7 @@ export default function FormKomisi() {
             <legend className="mb-2 text-sm font-bold text-[#5b4a63]">Jenis</legend>
             <div className="grid gap-2 sm:grid-cols-3">
               {[...JENIS, { id: 'brand', nama: 'Kerja sama brand', ket: 'Harga setelah ngobrol' }].map((x) => (
-                <label key={x.id} className={`cursor-pointer rounded-2xl border-2 p-3 has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-pink-300 ${jenis === x.id ? 'border-pink-400 bg-white' : 'border-white bg-white/60'}`}>
+                <label key={x.id} className={`cursor-pointer rounded-2xl border-2 p-3 has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-pink-600 ${jenis === x.id ? 'border-pink-400 bg-white' : 'border-white bg-white/60'}`}>
                   <input type="radio" name="jenis" value={x.id} checked={jenis === x.id} onChange={() => setJenis(x.id)} className="sr-only" />
                   <span className="block font-bold text-[#5b4a63]">{x.nama}</span>
                   <span className="block text-xs font-medium text-[#6e5a75]">{x.harga ? rp(x.harga) : x.ket}</span>
@@ -57,7 +59,7 @@ export default function FormKomisi() {
             </div>
             <div>
               <label htmlFor="k-bulan" className="mb-1 block text-sm font-bold text-[#5b4a63]">Bulan</label>
-              <select id="k-bulan" className={input}>{bulan.map((b) => <option key={b}>{b} 2026</option>)}</select>
+              <select id="k-bulan" className={input}>{bulan.map((b) => <option key={b}>{b}</option>)}</select>
             </div>
           </div>
           <div>

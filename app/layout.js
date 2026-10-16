@@ -8,7 +8,7 @@ const __jsonld = {"@context":"https://schema.org","@type":"ProfilePage","mainEnt
 export const metadata = {
   metadataBase: new URL("https://linkinbio-mellow.pintuweb.id"),
   title: { default: "Mella — Ilustrator & Sticker Artist", template: "%s — Mella" },
-  description: "Tautan Mella, ilustrator dan sticker artist di Malang: toko lima pack sticker vinyl, jadwal bazar, komisi ilustrasi dengan estimasi harga, dan kerja sama brand.",
+  description: "Tautan Mella, ilustrator & sticker artist di Malang: lima pack sticker vinyl, jadwal bazar, komisi ilustrasi dengan estimasi harga, dan kerja sama brand.",
   applicationName: "Mella",
   keywords: ["sticker artist", "komisi ilustrasi", "sticker vinyl", "ilustrator malang", "link in bio ilustrator"],
   authors: [{ name: "Mella" }],
@@ -21,13 +21,13 @@ export const metadata = {
     url: "https://linkinbio-mellow.pintuweb.id",
     siteName: "Mella",
     title: "Mella — Ilustrator & Sticker Artist",
-    description: "Tautan Mella, ilustrator dan sticker artist di Malang: toko lima pack sticker vinyl, jadwal bazar, komisi ilustrasi dengan estimasi harga, dan kerja sama brand.",
+    description: "Tautan Mella, ilustrator & sticker artist di Malang: lima pack sticker vinyl, jadwal bazar, komisi ilustrasi dengan estimasi harga, dan kerja sama brand.",
     images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "Mella — Ilustrator & Sticker Artist" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Mella — Ilustrator & Sticker Artist",
-    description: "Tautan Mella, ilustrator dan sticker artist di Malang: toko lima pack sticker vinyl, jadwal bazar, komisi ilustrasi dengan estimasi harga, dan kerja sama brand.",
+    description: "Tautan Mella, ilustrator & sticker artist di Malang: lima pack sticker vinyl, jadwal bazar, komisi ilustrasi dengan estimasi harga, dan kerja sama brand.",
     images: ["/og.jpg"],
   },
   robots: {
