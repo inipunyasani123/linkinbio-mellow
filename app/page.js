@@ -1,14 +1,16 @@
 import Link from 'next/link';
+import Gambar from './components/Gambar';
 import { ArrowUpRight, Heart } from 'lucide-react';
 import { LINKS, PROFIL } from '@/lib/mella';
 
+// Papan stiker layar lebar: stiker buatan Mella sendiri (potongan dari pack di toko).
 const STIKER = [
-  { e: '🌷', c: 'h-24 w-24 bg-pink-100 text-5xl', s: { top: '12%', left: '9%', rotate: '-10deg' } },
-  { e: '☁️', c: 'h-20 w-28 bg-sky-100 text-5xl', s: { top: '20%', right: '9%', rotate: '7deg' } },
-  { e: '🍓', c: 'h-20 w-20 bg-white text-4xl', s: { top: '50%', left: '15%', rotate: '9deg' } },
-  { e: '⭐', c: 'h-16 w-16 bg-amber-100 text-3xl', s: { bottom: '16%', left: '8%', rotate: '-6deg' } },
-  { e: '🐈', c: 'h-24 w-24 bg-violet-100 text-5xl', s: { bottom: '14%', right: '11%', rotate: '-8deg' } },
-  { e: '✏️', c: 'h-16 w-16 bg-emerald-100 text-3xl', s: { top: '52%', right: '17%', rotate: '12deg' } },
+  { src: 'tulip', w: 76, h: 99, s: { top: '11%', left: '9%', rotate: '-10deg' } },
+  { src: 'awan', w: 124, h: 93, s: { top: '19%', right: '8%', rotate: '7deg' } },
+  { src: 'cangkir', w: 96, h: 90, s: { top: '49%', left: '13%', rotate: '9deg' } },
+  { src: 'bintang', w: 64, h: 64, s: { bottom: '15%', left: '8%', rotate: '-6deg' } },
+  { src: 'kucing', w: 96, h: 106, s: { bottom: '12%', right: '10%', rotate: '-8deg' } },
+  { src: 'pensil', w: 88, h: 88, s: { top: '51%', right: '16%', rotate: '12deg' } },
 ];
 
 export default function Home() {
@@ -22,13 +24,15 @@ export default function Home() {
       {/* Papan stiker: hiasan di tepi layar lebar */}
       <div className="pointer-events-none hidden lg:block" aria-hidden="true">
         {STIKER.map((t) => (
-          <span key={t.e} className={`sticker absolute grid place-items-center rounded-[1.6rem] ${t.c}`} style={t.s}>{t.e}</span>
+          <Gambar key={t.src} src={`/images/stiker/${t.src}.webp`} alt="" width={t.w} height={t.h} className="absolute h-auto" style={{ ...t.s, width: t.w }} />
         ))}
       </div>
 
       <div className="w-full max-w-md text-center">
-        <div className="rise" aria-hidden="true">
-          <div className="sticker bob mx-auto grid h-28 w-28 place-items-center rounded-[2rem] bg-white text-6xl">🐰</div>
+        <div className="rise">
+          <div className="sticker bob mx-auto h-28 w-28 overflow-hidden rounded-[2rem] bg-white">
+            <Gambar src="/images/mella.webp" alt="Potret ilustrasi Mella berkerudung merah muda dan berkacamata bulat, dengan stiker kelinci di bahu" width={112} height={112} loading="eager" className="h-full w-full object-cover" />
+          </div>
         </div>
 
         <div className="rise mt-6" style={{ animationDelay: '0.08s' }}>

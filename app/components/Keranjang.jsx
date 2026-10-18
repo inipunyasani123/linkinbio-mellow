@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { GRATIS_ONGKIR, ONGKIR, PACK, rp } from '@/lib/mella';
+import Gambar from './Gambar';
 
 const WARNA = ['bg-pink-100', 'bg-amber-100', 'bg-sky-100', 'bg-emerald-100', 'bg-violet-100'];
 
@@ -20,7 +21,7 @@ export default function Keranjang() {
         {PACK.map((p, i) => (
           <li key={p.id} className={`sticker rounded-[1.6rem] p-5 ${WARNA[i % WARNA.length]} ${i % 2 ? 'rotate-1' : '-rotate-1'}`}>
             <div className="flex items-start gap-4">
-              <span aria-hidden="true" className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-white text-3xl shadow-sm">{p.emoji}</span>
+              <Gambar src={p.gambar} alt={p.alt} width={96} height={96} className={`h-24 w-24 shrink-0 rounded-2xl border-[3px] border-white object-cover shadow-sm ${p.stok ? '' : 'opacity-70 grayscale-[35%]'}`} />
               <div className="flex-1">
                 <h2 className="font-bold text-[#5b4a63]">{p.nama}</h2>
                 <p className="text-xs font-medium text-[#6e5a75]">{p.isi}</p>

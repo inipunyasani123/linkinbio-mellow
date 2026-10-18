@@ -1,4 +1,5 @@
-import { BRAND, SITE } from '@/lib/mella';
+import { BRAND, JENIS, SITE, rp } from '@/lib/mella';
+import Gambar from '../components/Gambar';
 import { hariIniWIB } from '@/lib/waktu';
 import Kembali from '../components/Kembali';
 import FormKomisi from '../components/FormKomisi';
@@ -8,6 +9,12 @@ export const metadata = {
   title: 'Komisi Ilustrasi',
   description: 'Komisi ilustrasi Mella: slot per bulan, harga kepala/setengah badan/badan penuh dengan estimasi langsung, dan kerja sama brand.',
   alternates: { canonical: `${SITE}/komisi` },
+};
+
+const CONTOH = {
+  kepala: 'wajah berambut keriting dalam lingkaran',
+  setengah: 'perempuan berambut bob dan kemeja kuning',
+  penuh: 'tokoh mungil melambai bersama kucing',
 };
 
 export default function Komisi() {
@@ -23,6 +30,20 @@ export default function Komisi() {
         <section aria-labelledby="slot-h" className="mt-8">
           <h2 id="slot-h" className="sr-only">Slot per bulan</h2>
           <SlotKomisi hari={hari} />
+        </section>
+
+        <section aria-labelledby="contoh-h" className="mt-10">
+          <h2 id="contoh-h" className="text-2xl font-bold text-[#5b4a63]">Contoh hasil <span aria-hidden="true">✏️</span></h2>
+          <p className="mt-1 text-sm font-medium text-[#6e5a75]">Tokoh di contoh ini rekaan — komisimu digambar dari foto yang kamu kirim.</p>
+          <ul className="mt-5 grid grid-cols-3 gap-3 sm:gap-5">
+            {JENIS.map((j, i) => (
+              <li key={j.id} className={`text-center ${['-rotate-2', 'rotate-1', '-rotate-1'][i]}`}>
+                <Gambar src={`/images/komisi/${j.id}.webp`} alt={`Contoh komisi ${j.nama.toLowerCase()}: ${CONTOH[j.id]}`} width={400} height={400} asli={800} sizes="(min-width: 672px) 200px, 30vw" className="sticker aspect-square w-full rounded-[1.4rem] bg-white object-cover" />
+                <p className="mt-2 text-sm font-bold leading-tight text-[#5b4a63]">{j.nama}</p>
+                <p className="text-xs font-semibold text-pink-700">{rp(j.harga)}</p>
+              </li>
+            ))}
+          </ul>
         </section>
 
         <FormKomisi hari={hari} />
