@@ -12,9 +12,9 @@ export const metadata = {
 };
 
 const CONTOH = {
-  kepala: 'wajah berambut keriting dalam lingkaran',
-  setengah: 'perempuan berambut bob dan kemeja kuning',
-  penuh: 'tokoh mungil melambai bersama kucing',
+  kepala: 'tokoh tanpa wajah berambut keriting dalam lingkaran',
+  setengah: 'tokoh tanpa wajah berambut bob dan kemeja kuning',
+  penuh: 'tokoh tanpa wajah melambai bersama kucing',
 };
 
 export default function Komisi() {

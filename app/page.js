@@ -31,7 +31,7 @@ export default function Home() {
       <div className="w-full max-w-md text-center">
         <div className="rise">
           <div className="sticker bob mx-auto h-28 w-28 overflow-hidden rounded-[2rem] bg-white">
-            <Gambar src="/images/mella.webp" alt="Potret ilustrasi Mella berkerudung merah muda dan berkacamata bulat, dengan stiker kelinci di bahu" width={112} height={112} loading="eager" className="h-full w-full object-cover" />
+            <Gambar src="/images/mella.webp" alt="Potret ilustrasi Mella tanpa wajah, berkerudung merah muda, dengan stiker kelinci di bahu" width={112} height={112} loading="eager" className="h-full w-full object-cover" />
           </div>
         </div>
 
